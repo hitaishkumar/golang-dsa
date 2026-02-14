@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dsa/sorting"
+	"dsa/array"
 	"fmt"
 )
 
@@ -41,5 +41,10 @@ func main() {
 
 	// fmt.Println(sorting.SelectionSort([]int{13, 46, 24, 52, 20, 9}))
 	// fmt.Println(sorting.BubbleSort([]int{13, 46, 24, 52, 20, 9}))
-	fmt.Println(sorting.MergeSort([]int{13, 46, 24, 52, 20, 9}))
+	// fmt.Println(sorting.RecursiveBubbleSort([]int{13, 46, 24, 52, 20, 9}))
+	// fmt.Println(sorting.MergeSort([]int{13, 46, 24, 52, 20, 9}))
+	// fmt.Println(array.FindLargest([]int{13, 46, 24, 52, 20, 9}))
+	// fmt.Println(array.FindSecondLargest([]int{13, 46, 24, 52, 20, 9}))
+	// fmt.Println(array.IsArraySorted([]int{-2, 1}))
+	fmt.Println(array.FindUnique([]int{1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4}))
 }

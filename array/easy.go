@@ -1,6 +1,7 @@
 package array
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -61,4 +62,84 @@ func FindUnique(input []int) []int {
 
 	return ans
 
+}
+func RotateArray(input []int, amount int) []int {
+
+	steps := amount % len(input)
+	store := []int{}
+	ans := []int{}
+
+	for idx, val := range input {
+
+		if (idx + 1) <= steps {
+			store = append(store, val)
+		} else {
+			ans = append(ans, val)
+		}
+	}
+
+	return append(ans, store...)
+
+}
+
+func MoveZerosToEnd(input []int) []int {
+
+	z, nz := 0, 0
+
+	for nz < len(input) {
+
+		if input[nz] != 0 {
+
+			input[z], input[nz] = input[nz], input[z]
+			nz++
+			z++
+
+		} else {
+			nz++
+		}
+
+		fmt.Printf("input: %v\n", input)
+	}
+
+	return input
+}
+
+func UnionOfTwoSorted(inputa, inputb []int) []int {
+
+	left, right := 0, 0
+	ans := []int{}
+
+	addToAns := func(val int) {
+		if len(ans) == 0 || val != ans[len(ans)-1] {
+			ans = append(ans, val)
+		}
+	}
+
+	for left < len(inputa) && right < len(inputb) {
+
+		if inputa[left] < inputb[right] {
+			addToAns(inputa[left])
+			left++
+
+		} else if inputa[left] > inputb[right] {
+			addToAns(inputa[right])
+			right++
+
+		} else {
+			addToAns(inputa[right])
+			left++
+			right++
+		}
+	}
+
+	for left < len(inputa) {
+		addToAns(inputa[left])
+		left++
+	}
+	for right < len(inputb) {
+		addToAns(inputb[right])
+		right++
+	}
+
+	return ans
 }

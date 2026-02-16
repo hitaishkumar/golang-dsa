@@ -49,6 +49,11 @@ func main() {
 	// fmt.Println(array.FindUnique([]int{1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4}))
 	// fmt.Println(array.RotateArray([]int{2, 4, 5, 6}, 5))
 	// fmt.Println(array.MoveZerosToEnd([]int{1, 0, 2, 3, 0, 4, 0, 1}))
-	fmt.Println(array.UnionOfTwoSorted([]int{1, 2, 3, 4, 5}, []int{2, 3, 4, 4, 5}))
+	// fmt.Println(array.UnionOfTwoSorted([]int{1, 2, 3, 4, 5}, []int{2, 3, 4, 4, 5}))
+	// fmt.Println(array.FindMissingNumber([]int{8, 2, 4, 5, 3, 7, 1}))
+	// fmt.Println(array.FindMissingNumberXOR([]int{8, 2, 4, 5, 3, 7, 1}))
+	// fmt.Println(array.MaxConsecutive([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}))
+	// fmt.Println(array.AppearOnce([]int{5, 4, 4, 1, 2, 1, 2}))
+	fmt.Println(array.LongestSubArraySum([]int{10, 5, 2, 7, 1, 9}, 15))
 
 }

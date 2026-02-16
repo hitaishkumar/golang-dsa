@@ -143,3 +143,85 @@ func UnionOfTwoSorted(inputa, inputb []int) []int {
 
 	return ans
 }
+
+func FindMissingNumber(input []int) int {
+	n := len(input)
+	ap_sum := (n + 1) * (n + 2) / 2 // n(n+1)/2 // n-> number of terms
+
+	full_sum := 0
+
+	for _, val := range input {
+		full_sum += val
+	}
+
+	return ap_sum - full_sum
+}
+func FindMissingNumberXOR(input []int) int {
+	xor_full := 0
+	n := len(input)
+	xor_partial := 0
+
+	for _, val := range input {
+		xor_partial ^= val
+	}
+	for i := 1; i <= n+1; i++ {
+		xor_full ^= i
+	}
+
+	return xor_full ^ xor_partial
+}
+
+func MaxConsecutive(input []int) int {
+
+	//{1, 1, 0, 1, 1, 1}
+
+	max_sum := 0
+	sum := 0
+
+	for i := 0; i < len(input); i++ {
+
+		if input[i] == 0 {
+			sum = 0
+		} else {
+			sum += 1
+		}
+		if sum > max_sum {
+			max_sum = sum
+		}
+	}
+
+	return max_sum
+
+}
+
+func AppearOnce(input []int) int {
+	xor_val := input[0]
+	for i := 1; i < len(input); i++ {
+		xor_val ^= input[i]
+	}
+
+	return xor_val
+}
+func LongestSubArraySum(input []int, sum int) int {
+	sub_arr := []int{}
+	max_len_sub_arr := 0
+	sum_arr := 0
+	for i := 0; i < len(input); i++ {
+		if sum_arr < sum {
+			sub_arr = append(sub_arr, input[i])
+			sum_arr += input[i]
+		}
+		fmt.Println(sub_arr)
+		fmt.Println(sum_arr)
+		if sum_arr == sum {
+			if len(sub_arr) > max_len_sub_arr {
+				max_len_sub_arr = len(sub_arr)
+			}
+			sum_arr = 0
+			sub_arr = []int{}
+		}
+
+	}
+
+	return max_len_sub_arr
+}

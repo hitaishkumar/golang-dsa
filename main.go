@@ -54,6 +54,7 @@ func main() {
 	// fmt.Println(array.FindMissingNumberXOR([]int{8, 2, 4, 5, 3, 7, 1}))
 	// fmt.Println(array.MaxConsecutive([]int{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}))
 	// fmt.Println(array.AppearOnce([]int{5, 4, 4, 1, 2, 1, 2}))
-	fmt.Println(array.LongestSubArraySum([]int{10, 5, 2, 7, 1, 9}, 15))
+	// fmt.Println(array.LongestSubArraySum([]int{10, 5, 2, 7, 1, 9}, 15))
+	fmt.Println(array.LongestSubArraySum2([]int{1, -1, 1, 1, 1, 1}, 3))
 
 }

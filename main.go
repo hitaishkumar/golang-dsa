@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dsa/array"
+	d "dsa/BS/1D"
 	"fmt"
 )
 
@@ -56,6 +56,13 @@ func main() {
 	// fmt.Println(array.AppearOnce([]int{5, 4, 4, 1, 2, 1, 2}))
 	// fmt.Println(array.LongestSubArraySum([]int{10, 5, 2, 7, 1, 9}, 15))
 	// fmt.Println(array.LongestSubArraySum2([]int{1, -1, 1, 1, 1, 1}, 3))
-	fmt.Println(array.MajorityElement_I([]int{2, 2, 1, 1, 1, 2, 2}))
+	// fmt.Println(array.MajorityElement_I([]int{2, 2, 1, 1, 1, 2, 2}))
+
+	if isFoundAt, err := d.Search([]int{9, 13, 20, 24, 46, 52}, 20); err != nil {
+		fmt.Println(err.Error())
+	} else {
+
+		fmt.Println("isFoundAt -> ", isFoundAt)
+	}
 
 }

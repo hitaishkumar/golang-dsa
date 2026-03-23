@@ -25,6 +25,20 @@ func LongestSubArraySum2(input []int, desired_sum int) int {
 	return res
 }
 
+func TwoSum(nums []int, target int) []int {
+
+	numMap := make(map[int]int)
+	for idx, val := range nums {
+		if value, exist := numMap[target-val]; exist {
+
+			return []int{value, idx}
+		}
+		numMap[val] = idx
+	}
+
+	return nil
+}
+
 func MajorityElement_I(nums []int) int {
 
 	numMap := map[int]int{nums[0]: 1}
